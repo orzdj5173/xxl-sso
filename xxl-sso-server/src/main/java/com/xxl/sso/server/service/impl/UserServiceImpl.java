@@ -26,10 +26,10 @@ public class UserServiceImpl implements UserService {
     public ReturnT<UserInfo> findUser(String username, String password) {
 
         if (username==null || username.trim().length()==0) {
-            return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "Please input username.");
+            return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "请输入用户名.");
         }
         if (password==null || password.trim().length()==0) {
-            return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "Please input password.");
+            return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "请输入密码.");
         }
 
         // mock user
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
             }
         }
 
-        return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "username or password is invalid.");
+        return new ReturnT<UserInfo>(ReturnT.FAIL_CODE, "用户名或密码不正确.");
     }
 
 

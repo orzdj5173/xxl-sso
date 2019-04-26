@@ -13,7 +13,7 @@
 
     <div class="login-box">
         <div class="login-logo">
-            <a><b>XXL</b>SSO</a>
+            <#--<a><b>XXL</b>SSO</a>-->
         </div>
         <form action="${request.contextPath}/doLogin">
             <div class="login-box-body">
@@ -41,7 +41,7 @@
                     </div><!-- /.col -->
                     <div class="col-xs-4">
                         <input type="hidden" name="redirect_url" value="${redirect_url!''}" />
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
                     </div>
                 </div>
             </div>
