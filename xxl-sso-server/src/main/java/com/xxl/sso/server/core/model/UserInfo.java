@@ -8,6 +8,7 @@ public class UserInfo {
     private int userid;
     private String username;
     private String password;
+    private int enabled;
 
     public int getUserid() {
         return userid;
@@ -33,4 +34,11 @@ public class UserInfo {
         this.password = password;
     }
 
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
 }
