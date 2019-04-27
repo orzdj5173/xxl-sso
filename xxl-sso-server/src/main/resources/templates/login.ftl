@@ -33,10 +33,10 @@
                 </#if>
 
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
+                    <div class="col-xs-8" >
+                        <div class="checkbox icheck" style="display:none;">
                             <label>
-                                <input type="checkbox" name="ifRemember" >记住密码
+                                <input type="checkbox" name="ifRemember">记住密码
                             </label>
                         </div>
                     </div><!-- /.col -->
