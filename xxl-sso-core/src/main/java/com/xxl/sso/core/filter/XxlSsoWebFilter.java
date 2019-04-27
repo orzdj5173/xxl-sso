@@ -73,7 +73,7 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
             // redirect logout
             String logoutPageUrl = ssoServer.concat(Conf.SSO_LOGOUT);
             if (logoutRedirect != null && logoutRedirect.trim().length() > 0) {
-                logoutPageUrl = logoutPageUrl.concat("?redirect_url=").concat(logoutRedirect);
+                logoutPageUrl = logoutPageUrl.concat("?redirect_url=").concat(req.getScheme()+"://"+ req.getServerName() + req.getRequestURI() + logoutRedirect);
             }
             res.sendRedirect(logoutPageUrl);
 
