@@ -51,6 +51,8 @@ public class Conf {
      */
     public static final String SSO_EXCLUDED_PATHS = "SSO_EXCLUDED_PATHS";
 
+    public static final String SSO_LOGOUT_REDIRECT = "SSO_LOGOUT_REDIRECT";
+
 
     /**
      * login fail result

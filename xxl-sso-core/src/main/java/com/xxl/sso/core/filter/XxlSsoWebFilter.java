@@ -25,6 +25,7 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
 
     private String ssoServer;
     private String logoutPath;
+    private String logoutRedirect;
     private String excludedPaths;
 
     @Override
@@ -32,6 +33,7 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
 
         ssoServer = filterConfig.getInitParameter(Conf.SSO_SERVER);
         logoutPath = filterConfig.getInitParameter(Conf.SSO_LOGOUT_PATH);
+        logoutRedirect = filterConfig.getInitParameter(Conf.SSO_LOGOUT_REDIRECT);
         excludedPaths = filterConfig.getInitParameter(Conf.SSO_EXCLUDED_PATHS);
 
         logger.info("XxlSsoWebFilter init.");
@@ -70,6 +72,9 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
 
             // redirect logout
             String logoutPageUrl = ssoServer.concat(Conf.SSO_LOGOUT);
+            if (logoutRedirect != null && logoutRedirect.trim().length() > 0) {
+                logoutPageUrl = logoutPageUrl.concat("?redirect_url=").concat(logoutRedirect);
+            }
             res.sendRedirect(logoutPageUrl);
 
             return;

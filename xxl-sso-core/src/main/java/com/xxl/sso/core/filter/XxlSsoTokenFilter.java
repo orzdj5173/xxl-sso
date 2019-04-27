@@ -26,6 +26,7 @@ public class XxlSsoTokenFilter extends HttpServlet implements Filter {
 
     private String ssoServer;
     private String logoutPath;
+    private String logoutRedirect;
     private String excludedPaths;
 
     @Override
@@ -33,6 +34,7 @@ public class XxlSsoTokenFilter extends HttpServlet implements Filter {
 
         ssoServer = filterConfig.getInitParameter(Conf.SSO_SERVER);
         logoutPath = filterConfig.getInitParameter(Conf.SSO_LOGOUT_PATH);
+        logoutRedirect = filterConfig.getInitParameter(Conf.SSO_LOGOUT_REDIRECT);
         excludedPaths = filterConfig.getInitParameter(Conf.SSO_EXCLUDED_PATHS);
 
         logger.info("XxlSsoTokenFilter init.");
